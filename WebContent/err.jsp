@@ -9,22 +9,22 @@
 </head>
 
 <body>
-	<div class="header">J W M</div>
-	<div style="height: 350px; width: 900px; text-align: center;margin: 0 auto; margin-top: 200px;">
+	<div class="header top">J W M</div>
+	<div style="height: 50px;">&nbsp;</div>
+	
+	<div style="position: absolute; top: 40%; width: 100% ;text-align:center;">
    		请<a class="xh" href="login.jsp">登录</a>后再访问此页面
    		<%System.out.println(session.getAttribute("username")); %>
     </div>
-    <div class="footer">
-    	<div style="width:900px; text-align:right; margin:0 auto;">
-    	<table style="height:90px; margin-right:0px; ">
-        	<tr>
-            <td ><a class="xh" href="mailto:1187260097@qq.com">联系我们</a>  </td>
-            <td ><a class="xh" href="mailto:1617427997@qq.com">快联系我们 </a>  </td>
-            <td ><a class="xh" href="mailto:944392498@qq.com">赶快联系我们 </a>  </td>
-            <td>©2015 JWM</td>
-            </tr>
-        </table>
-        </div>
-</div>
+    
+    <div style="height: 60px;">&nbsp;</div>
+    <div class="footer bottom">
+        	<ul>
+            <li><a class="xh" href="mailto:1187260097@qq.com">联系我们 </a>  </li>
+            <li><a class="xh" href="mailto:1617427997@qq.com">快联系我们 </a>  </li>
+            <li><a class="xh" href="mailto:944392498@qq.com">赶快联系我们 </a>  </li>
+            <li>©2015 JWM</li>
+            </ul>
+	</div>
 </body>
 </html>

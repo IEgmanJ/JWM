@@ -94,7 +94,7 @@
 
 <body>
 	<div style="height:40px;"></div>
-<div class="centerParent">
+	<div class="centerParent">
     	<div class="centerLeft" style="background-color:rgb(0, 113, 197);">
         	<img src="img/loginLeft.png" width="500px" height="500px"/>
         </div>
@@ -104,32 +104,29 @@
             <div style="height:30px"></div>
 		  	<div class="tl" style="width:300px; float:right">
             	<div style="height:30px; font-size:small; color:RED" id="errInfo"></div>
-			<form action="" onsubmit=" ">
-            	<input name="username" id="username" type="text" placeholder="用户名" class="inputLarge" onclick="clearErr()"/><br />
-             	<input name="password" id="password" type="password" placeholder="密码" class="inputLarge" onclick="clearErr();"/><br />
-              	<input name="isTeacher" id="isTeacher" type="checkbox" /><span style="color:#666; font-size:small">我是老师</span><br />
-                <div style="height:30px"></div>
-                <input name="submit" id="submit" type="button" value="登   录" onclick="login()" class="inputButton"/><br />
-            </form>
+				<form action="" onsubmit=" ">
+	            	<input name="username" id="username" type="text" placeholder="用户名" class="inputLarge" onclick="clearErr()"/><br />
+	             	<input name="password" id="password" type="password" placeholder="密码" class="inputLarge" onclick="clearErr();"/><br />
+	              	<input name="isTeacher" id="isTeacher" type="checkbox" /><span style="color:#666; font-size:small">我是老师</span><br />
+	                <div style="height:30px"></div>
+	                <input name="submit" id="submit" type="button" value="登   录" onclick="login()" class="inputButton"/><br />
+	            </form>
             	<div style="height:170px; width:300px;"></div>
                 <div style="width:300px;">管理员？ <a class="xh" style="font-weight:bold;" href="adminlogin.jsp">点此</a> 去登录</div>
             </div>
-            
-            
-            <div style="clear:both;"></div>
         </div>
+		<div style="clear:both"></div>
     </div>
-    <div class="footer">
-    	<div style="width:900px; text-align:right; margin:0 auto;">
-    	<table style="height:90px; margin-right:0px; ">
-        	<tr>
-            <td ><a class="xh" href="mailto:1187260097@qq.com">联系我们 </a>  </td>
-            <td ><a class="xh" href="mailto:1617427997@qq.com">快联系我们 </a>  </td>
-            <td ><a class="xh" href="mailto:944392498@qq.com">赶快联系我们 </a>  </td>
-            <td>©2015 JWM</td>
-            </tr>
-        </table>
-        </div>
-</div>
+    <div style="height: 30px;"></div>
+    
+    <div style="height: 60px;">&nbsp;</div>
+    <div class="footer bottom">
+        	<ul>
+            <li><a class="xh" href="mailto:1187260097@qq.com">联系我们 </a>  </li>
+            <li><a class="xh" href="mailto:1617427997@qq.com">快联系我们 </a>  </li>
+            <li><a class="xh" href="mailto:944392498@qq.com">赶快联系我们 </a>  </li>
+            <li>©2015 JWM</li>
+            </ul>
+	</div>
 </body>
 </html>

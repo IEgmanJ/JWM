@@ -2,17 +2,22 @@
 
 body {
     margin: 0;
-    font-family: "Segoe UI","Segoe UI Web Regular","Segoe UI Symbol","Helvetica Neue","BBAlpha Sans","S60 Sans",Arial,sans-serif;
+    font-family: "Microsoft YaHei UI";
     color: #000;
     background-color: #fff;
     font-size: 88%;
 }
-hr{
-	width:80%;
-	background-color:rgba(225, 225, 225, 1);
-	margin: 0 auto;
-	border:0;
-	height:1px;
+.top{
+	top: 0px;
+	z-index:99; /* 相当于轴，值越大，层越靠上*/
+	position: fixed; /*生成绝对定位的元素，相对于浏览器窗口进行定位。
+					元素的位置通过 "left", "top", "right" 以及 "bottom" 属性进行规定。
+					*/
+}             
+.bottom{
+	bottom: 0px;
+	z-index:99; /* 相当于轴，值越大，层越靠上*/
+	position: fixed;
 }
 #map{
 	font-size: small;
@@ -30,71 +35,99 @@ hr{
 .tr{
 	text-align:right;
 }
-.footer{
-	height:100px;
-	background:#E1E1E1;
-	font-size:smaller;
-	text-align:center;
-}
-.content{
-	width: 1200px;
-	margin: 0 auto;
-	margin-left: 0;
-	padding-bottom: 10px;
-}
-.contentLeft{
-	width: 200px;
-	float: left;
-}
-.contentLeftList{
-	height: 30px;
-	font-size:small;
-	line-height:200%;
-	text-align: left;
-	cursor:pointer; 
-	padding-top:2px;
-	padding-left: 20px;
-	
-	/*灰色*/
-	color:rgba(100, 100, 100, 1);
-	
-}
-#contentLeftListTitle{
-	/*蓝色*/
-/*	
-	background:rgb(0, 113, 197); 
-	color:white;
-*/
-	/*灰色*/
-	background:rgba(224, 224, 224, 1);
-	
-	
-	text-align: center;
-	height: 30px;
-	font-size: medium;
-	line-height:30px;
-}
-
-.cllf{
-	background: rgb(0, 113, 197);
-	font-weight: bold;
-	color: white;
-}
-.contentRight{
-	width: 900px;
-	padding-left:20px;
-	float: left;
-}
 .header{
 	height:50px; 
+	width:100%;
 	background-color:rgb(0, 113, 197);
+	padding-left: 20px;
+	padding-right: 20px;
+	
 	color: white;
 	font-size: x-large;
 	font-family: "Microsoft YaHei UI";
 	line-height: 200%;
-	padding-left: 20px;
-	padding-right: 20px;
 }
+.footer{
+	height:60px;
+	width:100%;
+	background:#E1E1E1;
+	
+	color:#666;
+	font-size:small;
+
+}
+	.footer ul{
+		display: inline;
+		float: right;
+
+	}
+             
+    .footer ul li{
+		list-style: none outside none;              
+		padding: 0 0 0 2px;
+		display: inline;
+		float: left; /*排列顺序*/
+		position: relative;
+		display: inline-block;
+		height: 16px;
+		line-height: 16px;
+		padding: 9px 10px 8px;
+	}
+.content{
+	width: 100%;
+	margin: 0 auto;
+	margin-left: 0;
+	padding-bottom: 10px;
+}
+	.contentLeft{
+		width: 200px;
+		float: left;
+	}
+	hr{
+		width:80%;
+		background-color:rgba(225, 225, 225, 1);
+		margin: 0 auto;
+		border:0;
+		height:1px;
+	}
+	.contentLeftList{
+		height: 30px;
+		font-size:small;
+		line-height:200%;
+		text-align: left;
+		cursor:pointer; 
+		padding-top:2px;
+		padding-left: 20px;
+		
+		/*灰色*/
+		color:rgba(100, 100, 100, 1);
+		
+	}
+	#contentLeftListTitle{
+		/*蓝色*/
+	/*	
+		background:rgb(0, 113, 197); 
+		color:white;
+	*/
+		/*灰色*/
+		background:rgba(224, 224, 224, 1);
+		
+		
+		text-align: center;
+		height: 30px;
+		font-size: medium;
+		line-height:30px;
+	}
+	
+	.cllf{
+		background: rgb(0, 113, 197);
+		font-weight: bold;
+		color: white;
+	}
+	.contentRight{
+		padding-left:20px;
+		float: left;
+	}
 
 table{
 	margin:auto;

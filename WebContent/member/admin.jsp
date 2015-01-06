@@ -33,43 +33,43 @@
 <script type="text/javascript">
 
 	function studentImport(){
-		document.getElementById("ifm").src = "toolkit/studentImport.jsp";
+		document.getElementById("iFRAME").src = "toolkit/studentImport.jsp";
 	}
 	function studentUpdate(){
-		document.getElementById("ifm").src = "toolkit/studentUpdate.jsp?as=<%=as %>&id=<%=id%>";
+		document.getElementById("iFRAME").src = "toolkit/studentUpdate.jsp?as=<%=as %>&id=<%=id%>";
 	}
 	function courseImport(){
-		document.getElementById("ifm").src = "toolkit/courseImport.jsp";
+		document.getElementById("iFRAME").src = "toolkit/courseImport.jsp";
 	}
 	function courseUpdate(){
-		document.getElementById("ifm").src = "toolkit/courseUpdate.jsp?as=<%=as %>&id=<%=id%>";
+		document.getElementById("iFRAME").src = "toolkit/courseUpdate.jsp?as=<%=as %>&id=<%=id%>";
 	}
 	function teacherImport(){
-		document.getElementById("ifm").src = "toolkit/teacherImport.jsp";
+		document.getElementById("iFRAME").src = "toolkit/teacherImport.jsp";
 	}
 	function teacherUpdate(){
-		document.getElementById("ifm").src = "toolkit/teacherUpdate.jsp?as=<%=as %>&id=<%=id%>";
+		document.getElementById("iFRAME").src = "toolkit/teacherUpdate.jsp?as=<%=as %>&id=<%=id%>";
 	}
 	function classroomQuery(){ //暂时不用
-		document.getElementById("ifm").src = "toolkit/classroomQuery.jsp";
+		document.getElementById("iFRAME").src = "toolkit/classroomQuery.jsp";
 	}
 //	function teacherCoursetableQuery(){
-//		document.getElementById("ifm").src = "toolkit/teacherCoursetableQuery.jsp?as=<%=as %>&id=<%=id%>";
+//		document.getElementById("iFRAME").src = "toolkit/teacherCoursetableQuery.jsp?as=<%=as %>&id=<%=id%>";
 //	}
 //	function studentCoursetableQuery(){
-//		document.getElementById("ifm").src = "toolkit/studentCoursetableQuery.jsp?as=<%=as %>&id=<%=id%>";	
+//		document.getElementById("iFRAME").src = "toolkit/studentCoursetableQuery.jsp?as=<%=as %>&id=<%=id%>";	
 //	}
 	function classCoursetableQuery(){
-		document.getElementById("ifm").src = "toolkit/classCoursetableQuery.jsp?as=<%=as %>&id=<%=id%>";
+		document.getElementById("iFRAME").src = "toolkit/classCoursetableQuery.jsp?as=<%=as %>&id=<%=id%>";
 	}
 	function workloadAnalysis(){
-		document.getElementById("ifm").src = "toolkit/workloadAnalysis.jsp?as=<%=as %>&id=<%=id%>";
+		document.getElementById("iFRAME").src = "toolkit/workloadAnalysis.jsp?as=<%=as %>&id=<%=id%>";
 	}
 	function dataBackup(){
-		document.getElementById("ifm").src = "toolkit/dataBackup.jsp";
+		document.getElementById("iFRAME").src = "toolkit/dataBackup.jsp";
 	}
 	function AutoSchedule(){
-		document.getElementById("ifm").src = "toolkit/AutoSchedule.jsp";
+		document.getElementById("iFRAME").src = "toolkit/AutoSchedule.jsp";
 	}
 	
 	function omover(obj){
@@ -79,14 +79,25 @@
 	function omout(obj){
 		obj.className="contentLeftList";
 	}
+	
+	//iFrame 自适应高度
+	function iFrameAutoAjust() { 
+		var ifm= document.getElementById("iframepage"); 
+		var subWeb = document.frames ? document.frames["iframepage"].document : ifm.contentDocument; 
+		if(ifm != null && subWeb != null) { 
+			ifm.height = subWeb.body.scrollHeight; 
+		} 
+	} 
 </script>
 </head>
 
 <body>
-	<div class="header">
+	<div class="header top">
 		<div style="float: left;">你好， <%=username %> ！</div>
 		<div style="float: left;"><a href="logout.jsp" style="font-size: small;color: white;line-height: 50px">安全退出</a></div>
 	</div>
+	<div style="height: 50px;">&nbsp;</div>
+	
 	<div style="height: 30px;"></div>
 	<div class="content">
 		<div class="contentLeft">
@@ -117,24 +128,18 @@
 				<div class="contentLeftList" onmouseover="omover(this)" onmouseout="omout(this)" onclick="AutoSchedule()">▶自动排课</div>
 			</div>
 		</div>
-		<div class="contentRight" id="contentMain"><iframe style="border-width:0; width: 900px; height: 550px;" id="ifm" src="welcome.html"></iframe></div>
+		<div class="contentRight" id="contentMain"><iframe  id="iFRAME" frameborder= '0' src="welcome.html" width="100%"></iframe></div>
 		<div style="clear: both;"></div>
 	</div>
 
-
-
-
-    <div class="footer">
-    	<div style="width:900px; text-align:right; margin:0 auto;">
-    	<table style="height:90px; margin-right:0px; ">
-        	<tr>
-            <td ><a class="xh" href="mailto:1187260097@qq.com">联系我们 </a>  </td>
-            <td ><a class="xh" href="mailto:1617427997@qq.com">快联系我们 </a>  </td>
-            <td ><a class="xh" href="mailto:944392498@qq.com">赶快联系我们 </a>  </td>
-            <td>©2015 JWM</td>
-            </tr>
-        </table>
-        </div>
-</div>
+    <div style="height: 60px;">&nbsp;</div>
+    <div class="footer bottom">
+        	<ul>
+            <li><a class="xh" href="mailto:1187260097@qq.com">联系我们 </a>  </li>
+            <li><a class="xh" href="mailto:1617427997@qq.com">快联系我们 </a>  </li>
+            <li><a class="xh" href="mailto:944392498@qq.com">赶快联系我们 </a>  </li>
+            <li>©2015 JWM</li>
+            </ul>
+	</div>
 </body>
 </html>

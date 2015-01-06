@@ -26,18 +26,19 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>管理中心  <%=username %> | 学生@JWM</title>
 <link rel="stylesheet" type="text/css" href="../css/JWM.css"/>
+<script language = "JavaScript" src = "../js/iFrameAutoAjust.js" ></script> 
 <script type="text/javascript">
 	function studentUpdate(){
-		document.getElementById("ifm").src = "toolkit/studentUpdate.jsp?as=<%=as %>&id=<%=id%>";
+		document.getElementById("iFRAME").src = "toolkit/studentUpdate.jsp?as=<%=as %>&id=<%=id%>";
 	}
 	function classroomQuery(){//暂时不用
-		document.getElementById("ifm").src = "";
+		document.getElementById("iFRAME").src = "";
 	}
 	function studentCoursetableQuery(){
-		document.getElementById("ifm").src = "toolkit/studentCoursetableQuery.jsp?as=<%=as %>&id=<%=id%>";
+		document.getElementById("iFRAME").src = "toolkit/studentCoursetableQuery.jsp?as=<%=as %>&id=<%=id%>";
 	}
 	function classCoursetableQuery(){
-		document.getElementById("ifm").src = "toolkit/classCoursetableQuery.jsp?as=<%=as %>&id=<%=id%>";
+		document.getElementById("iFRAME").src = "toolkit/classCoursetableQuery.jsp?as=<%=as %>&id=<%=id%>";
 	}
 	
 	function omover(obj){
@@ -52,10 +53,12 @@
 </head>
 
 <body>
-	<div class="header">
+	<div class="header top">
 		<div style="float: left;">你好， <%=username %> ！</div>
 		<div style="float: left;"><a href="logout.jsp" style="font-size: small;color: white; line-height: 50px;">安全退出</a></div>
 	</div>
+	<div style="height: 50px;">&nbsp;</div>
+	
 	<div style="height: 30px;"></div>
 	<div class="content">
 		<div class="contentLeft">
@@ -69,21 +72,18 @@
 				<div class="contentLeftList" onmouseover="omover(this)" onmouseout="omout(this)" onclick="classCoursetableQuery()">▶班级课程表查询</div>
 			</div>
 		</div>
-		<div class="contentRight" id="contentMain"><iframe style="border-width:0; width: 900px; height: 550px;" id="ifm" src="welcome.html"></iframe></div>
+		<div class="contentRight" id="contentMain"><iframe id = "iFRAME" style="border-width:0; width: 900px; height: 550px;" src="welcome.html"></iframe></div>
 		<div style="clear: both;"></div>
 	</div>
 
-    <div class="footer">
-    	<div style="width:900px; text-align:right; margin:0 auto;">
-    	<table style="height:90px; margin-right:0px; ">
-        	<tr>
-            <td ><a class="xh" href="mailto:1187260097@qq.com">联系我们 </a>  </td>
-            <td ><a class="xh" href="mailto:1617427997@qq.com">快联系我们 </a>  </td>
-            <td ><a class="xh" href="mailto:944392498@qq.com">赶快联系我们 </a>  </td>
-            <td>©2015 JWM</td>
-            </tr>
-        </table>
-        </div>
-</div>
+   	<div style="height: 60px;">&nbsp;</div>
+    <div class="footer bottom">
+        	<ul>
+            <li><a class="xh" href="mailto:1187260097@qq.com">联系我们 </a>  </li>
+            <li><a class="xh" href="mailto:1617427997@qq.com">快联系我们 </a>  </li>
+            <li><a class="xh" href="mailto:944392498@qq.com">赶快联系我们 </a>  </li>
+            <li>©2015 JWM</li>
+            </ul>
+	</div>
 </body>
 </html>
