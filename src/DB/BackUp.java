@@ -29,7 +29,8 @@ public class BackUp {
 		//mysqldump --no-defaults -u root -p wlan> D:\wlan.sql
 
 		String time = DateFormat.getDateInstance().format(new Date());
-		String fileName = "BackUp_"+time.substring(0,10)+"_"+(int)(Math.random()*1000)+".sql";
+
+		String fileName = "BackUp_"+time+"_"+(int)(Math.random()*1000)+".sql";
 
 		str= "mysqldump --no-defaults -u root -proot JWM > " + backupPath + "\\"+fileName;  //执行exec必须使用绝对路径
 		try {  
@@ -82,5 +83,4 @@ public class BackUp {
 
 		return filelist;
 	}
-
 }

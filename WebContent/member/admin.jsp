@@ -80,18 +80,93 @@
 		obj.className="contentLeftList";
 	}
 	
-	//iFrame 自适应高度
-	function iFrameAutoAjust() { 
-		var ifm= document.getElementById("iframepage"); 
-		var subWeb = document.frames ? document.frames["iframepage"].document : ifm.contentDocument; 
-		if(ifm != null && subWeb != null) { 
-			ifm.height = subWeb.body.scrollHeight; 
-		} 
-	} 
+	//iFrame 自适应宽度，高度
+	function iFrameAutoAjust() {
+		//通过调整iFrame外的层来调整iFrame的大小
+		var IFRAMEdiv = document.getElementById("contentMain");
+		var IFRAMEinnerHeight = document.getElementById("iFRAME").contentDocument.body.scrollHeight  ///网页正文全文高
+		var IFRAMEinnerWidth = document.getElementById("iFRAME").contentDocument.body.scrollHeight;
+		
+		var width = document.body.offsetWidth -  document.getElementById("contentLeft").offsetWidth - 37; //神秘的37
+		
+		IFRAMEdiv.style.width = width + "px"; 
+		IFRAMEdiv.style.height = (IFRAMEinnerHeight+37) + "px";
+		
+		setTimeout("iFrameAutoAjust()", 500);		
+	}
+		
+//		alert("IFRAME="+IFRAME+"\nleftWidth="+leftWidth+"\nclientWidth="+clientWidth);
+		
+		/*
+		------------------------------------------
+		在IE中 （以Height为例）
+		~$('iFRAME').contentDocument.body.scrollHeight
+		~iFRAME.
+		是只读的，
+		很多东西IE中是只读的，在非IE中却可读写
+		-----------------------------------------
+		不是那样的，$('iFRAME').contentDocument.body.scrollHeight都是只读的
+		
+		*/
+/*		var IFRAMEinnerHeight = IFRAME.contentDocument.body.scrollHeight;
+		var IFRAMEinnerWidth = IFRAME.contentDocument.body.scrollWidth; //如果有边框需要加上17，很麻烦，因此 scrolling="no"
+		
+		alert("IFRAMEinnerHeight="+IFRAMEinnerHeight+"\nIFRAMEinnerWidth="+IFRAMEinnerWidth);
+		
+		if(clientWidth-leftWidth > IFRAMEinnerWidth){
+			var tmp = clientWidth-leftWidth;
+			alert("clientWidth-leftWidth = "+tmp);
+			IFRAME.width = clientWidth - leftWidth;
+			IFRAME.height = IFRAMEinnerHeight ;
+			alert("当前可视宽度:"+clientWidth+
+					"\n IFRAMEinnerHeight :" + IFRAMEinnerHeight +
+					"\n IFRAMEinnerWidth :"  + IFRAMEinnerWidth  +
+					"\n IFRAME.height :"+ IFRAME.height+
+					"\n IFRAME.width :" + IFRAME.width);
+		}else if(clientWidth-leftWidth <= IFRAMEinnerWidth){
+			IFRAME.width = IFRAMEinnerWidth ;
+			IFRAME.height = IFRAMEinnerHeight ;
+			alert("当前可视宽度:"+clientWidth+
+					"\n IFRAMEinnerHeight :" + IFRAMEinnerHeight +
+					"\n IFRAMEinnerWidth :"  + IFRAMEinnerWidth  +
+					"\n IFRAME.height :"+ IFRAME.height+
+					"\n IFRAME.width :" + IFRAME.width);
+		}
+		
+*/		
+		
+		
+/*	
+失误
+		//多了37px，绝对是scroll的宽度
+//		if(-[1,])//只对IE8有效
+	
+		//利用 只读 进行判断	
+		if(tmp != IFRAMEinnerWidth){
+			IFRAMEinnerWidth--;
+			//非IE 
+			alert("NOT IE");
+		}else if(tmp == IFRAMEinnerWidth){
+			alert("IE");
+			//IE ； IFRAMEinnerHeight，IFRAMEinnerWidth为只读
+			var minWidth = IFRAMEinnerWidth - leftWidth; //所能容忍的最小宽度
+			if(clientWidth <= minWidth){
+				//什么都不做
+			}else{
+				iFRAME.width = clientWidth - leftWidth + 37;
+				iFRAME.height =  IFRAMEinnerHeight + 37;
+			}
+		}
+*/ 
+
+//	setTimeout("要执行的js语句", 等待的时间)
+
+//	}
+	
 </script>
 </head>
 
-<body>
+<body onload="iFrameAutoAjust()">
 	<div class="header top">
 		<div style="float: left;">你好， <%=username %> ！</div>
 		<div style="float: left;"><a href="logout.jsp" style="font-size: small;color: white;line-height: 50px">安全退出</a></div>
@@ -99,8 +174,8 @@
 	<div style="height: 50px;">&nbsp;</div>
 	
 	<div style="height: 30px;"></div>
-	<div class="content">
-		<div class="contentLeft">
+	<div id="content" class="content">
+		<div id ="contentLeft" class="contentLeft">
 			<div style="border:1px solid #E1E1E1;margin-left:30px;margin-bottom: 10px;">
 <!-- 			<div style="background:rgba(224, 224, 224, 1);color:rgba(116, 121, 142, 1);text-align: center;height: 30px;font-size: medium;line-height:200%">信息管理</div>	 -->
 				<div id="contentLeftListTitle">学生信息管理</div>
@@ -128,7 +203,7 @@
 				<div class="contentLeftList" onmouseover="omover(this)" onmouseout="omout(this)" onclick="AutoSchedule()">▶自动排课</div>
 			</div>
 		</div>
-		<div class="contentRight" id="contentMain"><iframe  id="iFRAME" frameborder= '0' src="welcome.html" width="100%"></iframe></div>
+		<div class="contentRight" id="contentMain"><iframe  id="iFRAME" frameborder= '0' src="welcome.html" scrolling="no" width="100%" height="100%"></iframe></div>
 		<div style="clear: both;"></div>
 	</div>
 

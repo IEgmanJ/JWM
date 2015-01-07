@@ -13,7 +13,7 @@
 <div style="padding-top: 20px;">
 <%
 	String backupPath = application.getRealPath("/backup"); //网站根目录下的backup文件夹
-	
+	System.out.println(backupPath);
 	if(Mybackup.backup(backupPath)){
 		out.println("数据备份成功");
 	}else{

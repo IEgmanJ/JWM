@@ -53,10 +53,25 @@
 	function omout(obj){
 		obj.className="contentLeftList";
 	}
+	
+	//iFrame 自适应宽度，高度
+	function iFrameAutoAjust() {
+		//通过调整iFrame外的层来调整iFrame的大小
+		var IFRAMEdiv = document.getElementById("contentMain");
+		var IFRAMEinnerHeight = document.getElementById("iFRAME").contentDocument.body.scrollHeight 
+		var IFRAMEinnerWidth = document.getElementById("iFRAME").contentDocument.body.scrollHeight;
+		
+		var width = document.body.offsetWidth -  document.getElementById("contentLeft").offsetWidth - 37; //神秘的37
+		
+		IFRAMEdiv.style.width = width + "px"; 
+		IFRAMEdiv.style.height = (IFRAMEinnerHeight+37) + "px";
+		
+		setTimeout("iFrameAutoAjust()", 500);		
+	}
 </script>
 </head>
 
-<body>
+<body onload="iFrameAutoAjust()">
 	<div class="header top">
 		<div style="float: left;">你好， <%=username %> ！</div>
 		<div style="float: left;"><a href="logout.jsp" style="font-size: small;color: white; line-height: 50px;">安全退出</a></div>
@@ -64,8 +79,8 @@
 	<div style="height: 50px;">&nbsp;</div>
 	
 	<div style="height: 30px;"></div>
-	<div class="content">
-		<div class="contentLeft">
+	<div id="content" class="content">
+		<div id ="contentLeft" class="contentLeft">
 			<div style="border:1px solid #E1E1E1;margin-left:30px;margin-bottom: 10px;">
 				<div id="contentLeftListTitle">个人信息管理</div>
 				<div class="contentLeftList" onmouseover="omover(this)" onmouseout="omout(this)" onclick="teacherUpdate()">▶个人信息修改</div><hr />
@@ -77,7 +92,7 @@
 				<div class="contentLeftList" onmouseover="omover(this)" onmouseout="omout(this)" onclick="workloadAnalysis()">▶工作量分析</div><hr />
 			</div>
 		</div>
-		<div class="contentRight" id="contentMain"><iframe id="iFRAME" style="border-width:0; width: 900px; height: 550px;" src="welcome.html"></iframe></div>
+		<div class="contentRight" id="contentMain"><iframe  id="iFRAME" frameborder= '0' src="welcome.html" scrolling="no" width="100%" height="100%"></iframe></div>
 		<div style="clear: both;"></div>
 	</div>
 

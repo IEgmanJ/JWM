@@ -82,6 +82,7 @@ body {
 	.contentLeft{
 		width: 200px;
 		float: left;
+		display:inline;
 	}
 	hr{
 		width:80%;
@@ -127,6 +128,7 @@ body {
 	.contentRight{
 		padding-left:20px;
 		float: left;
+		display:inline;
 	}
 
 table{

@@ -55,7 +55,7 @@ window.onload = function(){
 		for(int i = 1 ; i <= 4 ;i ++){
 			%>
 //			var n = "<%=i*2-1%>"; //第N节课
-			document.getElementById("<%=weeks+(i*2-1)+""%>").innerText = "<%=s[i]%>";
+			document.getElementById("<%=weeks+(i*2-1)+""%>").innerHTML = "<%=s[i]%>";
 			//周一 11 13 15 17 19
 			<%
 		}
