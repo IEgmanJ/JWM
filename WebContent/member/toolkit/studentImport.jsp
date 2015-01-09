@@ -70,7 +70,7 @@ body{
 <table style="text-align:center">
 <tr><td >姓名</td><td><input class="input"  name="s_name" type="text"/></td></tr>
 <tr><td colspan="2"><div class="div" id="s_name"></div></td></tr>
-<tr><td>学号</td><td><input class="input"  placeholder="当选专业时自动生成" name="s_id" id="s_id" readonly="readonly" type="text"/></td></tr>
+<tr><td>学号</td><td><input class="input"  placeholder="当选专业时自动生成" name="s_id" id="s_id" readonly="readonly"  type="text"/></td></tr>
 <tr><td>登录密码</td><td><input  placeholder="与学号相同" class="input" name="s_pwd" type="text"/></td></tr>
 <tr><td colspan="2"><div class="div" id="s_pwd"></div></td></tr>
 <tr><td>民族</td><td><input class="input" name="s_nation" type="text"/></td></tr>

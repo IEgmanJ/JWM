@@ -2,19 +2,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
-	String id = (String)session.getAttribute("id");
-	String as = (String)session.getAttribute("as");
-	String username = (String)session.getAttribute("username");
+	String ID = (String)session.getAttribute("ID");
+	String AS = (String)session.getAttribute("AS");
+	String USERNAME = (String)session.getAttribute("USERNAME");
 
-	if("admin".equals(as)){
+	if("admin".equals(AS)){
 		response.setStatus(HttpServletResponse.SC_MOVED_PERMANENTLY);
 		String newLocn = "member/admin.jsp";
 		response.setHeader("Location",newLocn);
-	}else if("teacher".equals(as)){
+	}else if("teacher".equals(AS)){
 		response.setStatus(HttpServletResponse.SC_MOVED_PERMANENTLY);
 		String newLocn = "member/teacher.jsp";
 		response.setHeader("Location",newLocn);
-	}else if("student".equals(as)){
+	}else if("student".equals(AS)){
 		response.setStatus(HttpServletResponse.SC_MOVED_PERMANENTLY);
 		String newLocn = "member/index.jsp";
 		response.setHeader("Location",newLocn);

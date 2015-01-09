@@ -14,7 +14,7 @@
 	
 	<div style="position: absolute; top: 40%; width: 100% ;text-align:center;">
    		请<a class="xh" href="login.jsp">登录</a>后再访问此页面
-   		<%System.out.println(session.getAttribute("username")); %>
+   		<%System.out.println(session.getAttribute("USERNAME")); %>
     </div>
     
     <div style="height: 60px;">&nbsp;</div>

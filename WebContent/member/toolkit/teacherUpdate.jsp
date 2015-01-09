@@ -30,8 +30,8 @@
 <tr><td colspan="3" style="border-top:1px solid;height:1px;"></td></tr>
 
 <%   Statement stmt=null;
-String t_id = request.getParameter("id");
-String as = (String)session.getAttribute("as");
+String t_id = (String)session.getAttribute("ID");
+String as = (String)session.getAttribute("AS");
    stmt =conn.getConnection().createStatement();
     String sql="SELECT t_name , t_id FROM teachers";
    ResultSet rs=stmt.executeQuery(sql);

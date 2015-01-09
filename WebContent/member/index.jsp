@@ -2,21 +2,21 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <%
-	String id = (String)session.getAttribute("id");
-	String as = (String)session.getAttribute("as");
-	String username = (String)session.getAttribute("username");
-	if(id == null){
+	String ID = (String)session.getAttribute("ID");
+	String AS = (String)session.getAttribute("AS");
+	String USERNAME = (String)session.getAttribute("USERNAME");
+	if(ID == null){
 		response.sendRedirect("../err.jsp");
 	}
-	if("admin".equals(as)){
+	if("admin".equals(AS)){
 		response.setStatus(HttpServletResponse.SC_MOVED_PERMANENTLY);
 		String newLocn = "admin.jsp";
 		response.setHeader("Location",newLocn);
-	}else if("teacher".equals(as)){
+	}else if("teacher".equals(AS)){
 		response.setStatus(HttpServletResponse.SC_MOVED_PERMANENTLY);
 		String newLocn = "teacher.jsp";
 		response.setHeader("Location",newLocn);
-	}else if("student".equals(as)){
+	}else if("student".equals(AS)){
 		
 	}
 
@@ -24,21 +24,21 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>管理中心  <%=username %> | 学生@JWM</title>
+<title>管理中心  <%=USERNAME %> | 学生@JWM</title>
 <link rel="stylesheet" type="text/css" href="../css/JWM.css"/>
 <script language = "JavaScript" src = "../js/iFrameAutoAjust.js" ></script> 
 <script type="text/javascript">
 	function studentUpdate(){
-		document.getElementById("iFRAME").src = "toolkit/studentUpdate.jsp?as=<%=as %>&id=<%=id%>";
+		document.getElementById("iFRAME").src = "toolkit/studentUpdate.jsp";
 	}
 	function classroomQuery(){//暂时不用
 		document.getElementById("iFRAME").src = "";
 	}
 	function studentCoursetableQuery(){
-		document.getElementById("iFRAME").src = "toolkit/studentCoursetableQuery.jsp?as=<%=as %>&id=<%=id%>";
+		document.getElementById("iFRAME").src = "toolkit/studentCoursetableQuery.jsp";
 	}
 	function classCoursetableQuery(){
-		document.getElementById("iFRAME").src = "toolkit/classCoursetableQuery.jsp?as=<%=as %>&id=<%=id%>";
+		document.getElementById("iFRAME").src = "toolkit/classCoursetableQuery.jsp";
 	}
 	
 	function omover(obj){
@@ -67,7 +67,7 @@
 
 <body onload="iFrameAutoAjust()">
 	<div class="header top">
-		<div style="float: left;">你好， <%=username %> ！</div>
+		<div style="float: left;">你好， <%=USERNAME %> ！</div>
 		<div style="float: left;"><a href="logout.jsp" style="font-size: small;color: white; line-height: 50px;">安全退出</a></div>
 	</div>
 	<div style="height: 50px;">&nbsp;</div>

@@ -31,10 +31,10 @@
 
 <%   
 	
-	String s_id = request.getParameter("id");
+	String s_id =  (String)session.getAttribute("ID");
 
 	Statement stmt=null;
-	String as = (String)session.getAttribute("as");
+	String as = (String)session.getAttribute("AS");
    	stmt =conn.getConnection().createStatement();
     String sql="SELECT s_name , s_id FROM students";
    	ResultSet rs=stmt.executeQuery(sql);

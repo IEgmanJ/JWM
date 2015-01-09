@@ -32,7 +32,7 @@
 
 <%   
 Statement stmt=null;
-String as = (String)session.getAttribute("as");
+String as = (String)session.getAttribute("AS");
 	stmt =conn.getConnection().createStatement();
 
    try{
