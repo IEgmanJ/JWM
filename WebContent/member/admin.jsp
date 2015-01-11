@@ -79,20 +79,40 @@
 	function omout(obj){
 		obj.className="contentLeftList";
 	}
+	function topomover(obj){
+		obj.className="overheader";
+//		obj.style.cursor="pointer";
+	}
+	function topomout(obj){
+		obj.className="";
+	}
+	function logout(){
+		if(confirm("确认退出？")){
+			window.location = "logout.jsp";
+		}
+	}
+	
 	
 	//iFrame 自适应宽度，高度
 	function iFrameAutoAjust() {
 		//通过调整iFrame外的层来调整iFrame的大小
-		var IFRAMEdiv = document.getElementById("contentMain");
-		var IFRAMEinnerHeight = document.getElementById("iFRAME").contentDocument.body.scrollHeight  ///网页正文全文高
-		var IFRAMEinnerWidth = document.getElementById("iFRAME").contentDocument.body.scrollHeight;
+		//报错document.getElementById(...).contentDocument.body is null
+		var IFRAMEbody = document.getElementById("iFRAME").contentDocument.body;
 		
-		var width = document.body.offsetWidth -  document.getElementById("contentLeft").offsetWidth - 37; //神秘的37
+		if(IFRAMEbody != null){
+			console.log(IFRAMEbody);
+			var IFRAMEdiv = document.getElementById("contentMain");
+			var IFRAMEinnerHeight = IFRAMEbody.scrollHeight  ///网页正文全文高
+			var IFRAMEinnerWidth = IFRAMEbody.scrollHeight;
+			var width = document.body.offsetWidth -  document.getElementById("contentLeft").offsetWidth - 37; //神秘的37
 		
-		IFRAMEdiv.style.width = width + "px"; 
-		IFRAMEdiv.style.height = (IFRAMEinnerHeight+37) + "px";
-		
-		setTimeout("iFrameAutoAjust()", 500);		
+			IFRAMEdiv.style.width = width + "px"; 
+			IFRAMEdiv.style.height = (IFRAMEinnerHeight+37) + "px";
+			
+		}else{
+			console.log("未调整");
+		}
+		setTimeout("iFrameAutoAjust()", 500);
 	}
 		
 //		alert("IFRAME="+IFRAME+"\nleftWidth="+leftWidth+"\nclientWidth="+clientWidth);
@@ -168,8 +188,23 @@
 
 <body onload="iFrameAutoAjust()">
 	<div class="header top">
-		<div style="float: left;">你好， <%=USERNAME %> ！</div>
-		<div style="float: left;"><a href="logout.jsp" style="font-size: small;color: white;line-height: 50px">安全退出</a></div>
+		<div 
+			style="position:absolute;top:0;left:0px;font-size:x-large;display: inline;line-height: 50px;cursor:pointer;padding-left: 10px; padding-right: 10px" 
+			onmouseover="topomover(this)" 
+			onmouseout="topomout(this)"
+			onclick="document.getElementById('iFRAME').src = 'welcome.html'">教务辅助管理系统 JWM ☭
+		</div>
+		<div 
+			style="position:absolute;top:0;right:30px;font-size:medium ;display: inline;line-height: 50px;cursor:pointer;padding-left: 10px; padding-right: 10px " 
+			onmouseover="topomover(this)" 
+			onmouseout="topomout(this)"> <%=USERNAME %>
+		</div>
+		<div 
+			style="width:30px;position:absolute;top:0;right:0px;cursor:pointer;line-height: 50px;"  
+			onmouseover="topomover(this)" 
+			onmouseout="topomout(this)"
+			onclick="logout()">&nbsp;<img src="../img/logout.png" height="20px" width="20px"  alt="退出登录"/>
+		</div>
 	</div>
 	<div style="height: 50px;">&nbsp;</div>
 	

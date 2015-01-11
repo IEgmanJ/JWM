@@ -32,6 +32,7 @@
 	</div>
 	<%
 		ArrayList<String[]> files = MybackupRestor.refreshFileList(application.getRealPath("/backup"));
+		System.out.println(application.getRealPath("/backup")+"-------"+files);
 		if(files.isEmpty()){
 			out.println("空");
 		}

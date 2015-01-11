@@ -9,7 +9,14 @@
 </head>
 
 <body>
-	<div class="header top">J W M</div>
+	<div class="header top">
+		<div 
+			style="position:absolute;top:0;left:0px;font-size:x-large;display: inline;line-height: 50px;cursor:pointer;padding-left: 10px; padding-right: 10px" 
+			onmouseover="topomover(this)" 
+			onmouseout="topomout(this)"
+			onclick="document.getElementById('iFRAME').src = 'welcome.html'">教务辅助管理系统 JWM ☭
+		</div>
+	</div>
 	<div style="height: 50px;">&nbsp;</div>
 	
 	<div style="position: absolute; top: 40%; width: 100% ;text-align:center;">
