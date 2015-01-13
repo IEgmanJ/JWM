@@ -84,7 +84,7 @@
 		out.print("<span style=\"font-size:1px\">"+success+"</span>");
 	}
 	
-	Thread.sleep(1500); //腾出时间显示动画
+	Thread.sleep(1000); //腾出时间显示动画
 %>
 
 </body>

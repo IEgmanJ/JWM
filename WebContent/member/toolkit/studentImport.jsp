@@ -3,7 +3,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
  
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <script type="text/javascript">
@@ -42,24 +41,27 @@ function loadXMLDoc(code){
 		}
 	</script>
 <style type="text/css">
-body{
-    font-size:14px;
-}
- .input{
- font-size:14px;
-    margin-top:0px;
-      height:25px;
-      width:300px;
-      margin-top:5px;
-      margin-bottom:5px     }
-
-
-.input1{
-    height:40px;
-    width:60px;
-   
-}
-</style>
+		.input{
+			height:30px;
+			width:350px; 
+		}
+		.btn{
+			background-color:rgb(0, 113, 197);
+			color:rgb(255, 255, 255);
+			border-width:0px;
+			margin-right:40px;
+			height:30px;
+			width:100px;
+		}
+		table{
+			margin:0 auto;
+			line-height:30px;
+		}
+		td{
+			padding-top:5px;
+			padding-bottom:5px;
+		}
+		</style>
 <link rel="stylesheet" type="text/css" href="../../css/JWM.css"/>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>学生信息录入</title>
@@ -67,20 +69,20 @@ body{
 <body>
 <div id="map" style="padding-top:5px;">你的位置：<a class="xh" href="../welcome.html">欢迎</a> > <a class="xh" href="javascript:void(0)">学生信息录入</a></div>
 <form action="s/studentImportInsert.jsp" method="get" name="form" id="form"  onSubmit="return check()">
-<table style="text-align:center">
-<tr><td >姓名</td><td><input class="input"  name="s_name" type="text"/></td></tr>
-<tr><td colspan="2"><div class="div" id="s_name"></div></td></tr>
+<table>
+<tr><td >姓名</td><td><input class="input"  name="s_name" type="text"/><div class="div" id="s_name"></div></td></tr>
 <tr><td>学号</td><td><input class="input"  placeholder="当选专业时自动生成" name="s_id" id="s_id" readonly="readonly"  type="text"/></td></tr>
-<tr><td>登录密码</td><td><input  placeholder="与学号相同" class="input" name="s_pwd" type="text"/></td></tr>
-<tr><td colspan="2"><div class="div" id="s_pwd"></div></td></tr>
+<tr><td>性别</td><td><input name="s_sex" type="radio" value="女"/>女<span style="margin-left: 40px;">&nbsp;</span><input name="s_sex" type="radio" value="男"/>男</td></tr>
+<tr><td>登录密码</td><td><input  placeholder="与学号相同" class="input" name="s_pwd" type="text"/><div class="div" id="s_pwd"></div></td></tr>
 <tr><td>民族</td><td><input class="input" name="s_nation" type="text"/></td></tr>
-<tr><td>性别</td><td><input name="s_sex" type="radio" value="女"/><span style="margin-right:80px">女</span><input  name="s_sex" type="radio" value="男"/>男 </td></tr>
+  <tr><td>联系方式</td><td><input class="input" name="s_tell" type="text"></td></tr>
+  <tr><td>家庭住址</td><td><input class="input" name="s_address" type="text"></td></tr>
 <tr><td>所属二级学院</td><td> 
-   <select name="s_sc_code" style="width:300px;margin-bottom:5px; margin-top:5px; height:33px; font-size:14px">
+   <select class="input" name="s_sc_code">
   <option value="11111">电子信息工程学院 </option>
   </select></td></tr>
   <tr><td>所属专业</td><td> 
-   <select name="s_mj_code" onchange="loadXMLDoc(this.value)" style="width:300px; margin-bottom:5px; margin-top:5px; height:33px; font-size:14px"> 
+   <select  class="input"  name="s_mj_code" onchange="loadXMLDoc(this.value)"> 
   <option value="1501">计算机应用技术 </option>
   <option value="1502">计算机网络技术</option>
   <option value="1503">软件技术</option>
@@ -91,10 +93,8 @@ body{
   <option value="1508">移动通信技术 </option>
   <option value="1509">软件外包服务（校企合作班）</option>
   </select></td></tr>
-  <tr><td>联系方式</td><td><input class="input" name="s_tell" type="text"></td></tr>
-  
-  <tr><td>家庭住址</td><td><input class="input" name="s_address" type="text"></td></tr>
-  <tr><td colspan="2"><input  style="margin-right:50px;margin-left:60px;"  class="input1" type="submit" value="提交"/> <input  class="input1" type="reset" value="重置"/></td></tr>
+
+  <tr><td></td><td><input class="btn" type="submit" value="提交"/> <input  class="btn" type="reset" value="重置"/></td></tr>
 </table>
 </form>
 

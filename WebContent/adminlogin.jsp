@@ -107,7 +107,7 @@
 	                <input name="submit" id="submit" type="button" value="登   录" onclick="login()" class="inputButton"/><br />
 	            </form>
             	<div style="height:190px; width:300px;"></div>
-                <div style="width:300px;">不是管理员？ <a class="xh" style="font-weight:bold;" href="login.jsp">点此</a> 去登录</div>
+                <div style="width:300px;font-size: small">不是管理员？ <a class="xh" style="font-weight:bold;" href="login.jsp">点此</a> 去登录</div>
             </div>
         </div>
 		<div style="clear:both"></div>
@@ -120,7 +120,7 @@
             <li><a class="xh" href="mailto:1187260097@qq.com">联系我们 </a>  </li>
             <li><a class="xh" href="mailto:1617427997@qq.com">快联系我们 </a>  </li>
             <li><a class="xh" href="mailto:944392498@qq.com">赶快联系我们 </a>  </li>
-            <li>©2015 JWM</li>
+            <li>&copy;2014-2015 JWM</li>
             </ul>
 	</div>
 </body>

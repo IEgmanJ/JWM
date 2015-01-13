@@ -132,7 +132,7 @@
             <li><a class="xh" href="mailto:1187260097@qq.com">联系我们 </a>  </li>
             <li><a class="xh" href="mailto:1617427997@qq.com">快联系我们 </a>  </li>
             <li><a class="xh" href="mailto:944392498@qq.com">赶快联系我们 </a>  </li>
-            <li>©2015 JWM</li>
+            <li>&nbsp;2014-2015 JWM</li>
             </ul>
 	</div>
 </body>
