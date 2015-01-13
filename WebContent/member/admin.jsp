@@ -107,7 +107,7 @@
 			var width = document.body.offsetWidth -  document.getElementById("contentLeft").offsetWidth - 37; //神秘的37
 		
 			IFRAMEdiv.style.width = width + "px"; 
-			IFRAMEdiv.style.height = (IFRAMEinnerHeight+37) + "px";
+			IFRAMEdiv.style.height = (IFRAMEinnerHeight) + "px";
 			
 		}else{
 			console.log("未调整");

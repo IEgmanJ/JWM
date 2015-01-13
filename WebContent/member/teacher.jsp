@@ -61,7 +61,11 @@
 	function topomout(obj){
 		obj.className="";
 	}
-	
+	function logout(){
+		if(confirm("确认退出？")){
+			window.location = "logout.jsp";
+		}
+	}
 	
 	//iFrame 自适应宽度，高度
 	function iFrameAutoAjust() {
@@ -77,7 +81,7 @@
 			var width = document.body.offsetWidth -  document.getElementById("contentLeft").offsetWidth - 37; //神秘的37
 		
 			IFRAMEdiv.style.width = width + "px"; 
-			IFRAMEdiv.style.height = (IFRAMEinnerHeight+37) + "px";
+			IFRAMEdiv.style.height = (IFRAMEinnerHeight) + "px";
 			
 		}else{
 			console.log("未调整");

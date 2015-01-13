@@ -5,9 +5,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" type="text/css" href="../../css/JWM.css">
+<script type="text/javascript">
+	function loadFalse(){
+		setTimeout(document.getElementById("tip").innerHTML = "加载失败！", 3000)
+	}
+</script>
 <title>工作量分析</title>
 </head>
 <body>
 <div id="map" style="padding-top:5px;">你的位置：<a class="xh" href="../welcome.html">欢迎</a> > <a class="xh" href="javascript:void(0)">工作量分析</a></div>
+<div id="tip">模块加载中……</div>
 </body>
 </html>
